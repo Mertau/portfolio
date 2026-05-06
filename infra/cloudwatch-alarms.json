@@ -1,0 +1,56 @@
+{
+  "Alarms": [
+    {
+      "AlarmName": "portfolio-backend-high-cpu",
+      "AlarmDescription": "Alert when ECS backend CPU exceeds 80%",
+      "MetricName": "CPUUtilization",
+      "Namespace": "AWS/ECS",
+      "Statistic": "Average",
+      "Period": 300,
+      "EvaluationPeriods": 2,
+      "Threshold": 80,
+      "ComparisonOperator": "GreaterThanThreshold",
+      "Dimensions": [
+        { "Name": "ClusterName", "Value": "portfolio-cluster" },
+        { "Name": "ServiceName", "Value": "portfolio-service" }
+      ]
+    },
+    {
+      "AlarmName": "portfolio-backend-high-memory",
+      "AlarmDescription": "Alert when ECS backend memory exceeds 85%",
+      "MetricName": "MemoryUtilization",
+      "Namespace": "AWS/ECS",
+      "Statistic": "Average",
+      "Period": 300,
+      "EvaluationPeriods": 2,
+      "Threshold": 85,
+      "ComparisonOperator": "GreaterThanThreshold",
+      "Dimensions": [
+        { "Name": "ClusterName", "Value": "portfolio-cluster" },
+        { "Name": "ServiceName", "Value": "portfolio-service" }
+      ]
+    },
+    {
+      "AlarmName": "portfolio-alb-5xx-errors",
+      "AlarmDescription": "Alert when ALB 5xx error rate exceeds 1%",
+      "MetricName": "HTTPCode_Target_5XX_Count",
+      "Namespace": "AWS/ApplicationELB",
+      "Statistic": "Sum",
+      "Period": 60,
+      "EvaluationPeriods": 3,
+      "Threshold": 10,
+      "ComparisonOperator": "GreaterThanThreshold"
+    },
+    {
+      "AlarmName": "portfolio-rds-high-connections",
+      "AlarmDescription": "Alert when RDS connections exceed 80",
+      "MetricName": "DatabaseConnections",
+      "Namespace": "AWS/RDS",
+      "Statistic": "Average",
+      "Period": 300,
+      "EvaluationPeriods": 2,
+      "Threshold": 80,
+      "ComparisonOperator": "GreaterThanThreshold"
+    }
+  ]
+}
