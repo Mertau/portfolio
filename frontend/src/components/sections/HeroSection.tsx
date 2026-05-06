@@ -75,15 +75,9 @@ export function HeroSection() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg" asChild>
-            <Link href="/#projects">View Projects</Link>
-          </Button>
-          <Button size="lg" variant="outline" asChild>
-            <Link href="/visualizer">Live Visualizer</Link>
-          </Button>
-          <Button size="lg" variant="ghost" asChild>
-            <Link href="/#contact">Get In Touch</Link>
-          </Button>
+          <Link href="/#projects"><Button size="lg">View Projects</Button></Link>
+          <Link href="/visualizer"><Button size="lg" variant="outline">Live Visualizer</Button></Link>
+          <Link href="/#contact"><Button size="lg" variant="ghost">Get In Touch</Button></Link>
         </motion.div>
       </motion.div>
     </section>

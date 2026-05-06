@@ -81,14 +81,14 @@ export function ProjectsSection() {
                     )}
                     <div className="flex gap-2">
                       {project.github_url && (
-                        <Button variant="outline" size="sm" asChild>
-                          <a href={project.github_url} target="_blank" rel="noopener noreferrer">GitHub</a>
-                        </Button>
+                        <a href={project.github_url} target="_blank" rel="noopener noreferrer">
+                          <Button variant="outline" size="sm">GitHub</Button>
+                        </a>
                       )}
                       {project.live_url && (
-                        <Button size="sm" asChild>
-                          <a href={project.live_url} target="_blank" rel="noopener noreferrer">Live</a>
-                        </Button>
+                        <a href={project.live_url} target="_blank" rel="noopener noreferrer">
+                          <Button size="sm">Live</Button>
+                        </a>
                       )}
                     </div>
                   </div>
