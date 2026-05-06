@@ -61,9 +61,9 @@ export function Navigation() {
               Sign Out
             </Button>
           ) : (
-            <Button size="sm" asChild>
-              <Link href="/auth/signin">Sign In</Link>
-            </Button>
+            <Link href="/auth/signin">
+              <Button size="sm">Sign In</Button>
+            </Link>
           )}
         </div>
 
